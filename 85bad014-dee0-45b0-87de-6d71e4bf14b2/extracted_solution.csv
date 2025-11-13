@@ -1,0 +1,9 @@
+"SYMBOLS","Group","Expression_mean","Expression_sd"
+"ANPEP","Norm",1,0.204
+"ANPEP","Hyp",1.28,0.457
+"CALD1","Norm",1,0.0513
+"CALD1","Hyp",0.772,0.124
+"CSPG4","Norm",1,0.0946
+"CSPG4","Hyp",2.32,0.882
+"PDGFRB","Norm",1,0.0987
+"PDGFRB","Hyp",1.62,0.502

@@ -1,4 +1,6 @@
 library(tibble)
+library(ggplot2)
+
 
 data <- tribble(
   ~SYMBOLS, ~Category, ~Group, ~Expression_mean, ~Expression_sd,
