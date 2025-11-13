@@ -1,3 +1,5 @@
+if (!require(ggplot2, quietly = TRUE)) install.packages("ggplot2")
+
 library(ggplot2)
 
 # Read the extracted solution CSV (must be in same folder)
@@ -29,3 +31,4 @@ p <- ggplot(data, aes(x = Group, y = Expression_mean, fill = Group)) +
 p
 # Save output
 ggsave("extracted_solution.jpg", plot = p, width = 4, height = 3)
+
