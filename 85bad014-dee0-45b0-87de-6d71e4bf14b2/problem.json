@@ -1,0 +1,34 @@
+{
+  "id": "02349b4d-85a8-469d-aede-919d71f04743",
+  "paper": "https://doi.org/10.1093/stmcls/sxaf055",
+  "figure_reference": "Figure 2D",
+  "row": "Each row represents a pericyte marker used to reproduce the bar chart showing expression in normoxic vs hypoxic iPSC-derived pericytes.",
+  "columns": [
+    {
+      "name": "SYMBOLS",
+      "type": "str",
+      "description": "the gene symbol of the pericyte marker"
+    },
+    {
+      "name": "Group",
+      "type": "str",
+      "description": "whether the cells were normoxic or hypoxic"
+    },
+    {
+      "name": "Expression_mean",
+      "type": "float",
+      "description": "the normalized mean expression value of the gene under the given condition"
+    },
+    {
+      "name": "Expression_sd",
+      "type": "float",
+      "description": "the standard deviation of the normalized expression value"
+    }
+  ],
+  "row_order_columns": ["SYMBOLS", "Group"],
+  "notes": [
+    "The figure was digitized manually; numerical values were extracted directly from the plot to reproduce Figure 2D.",
+    "Only the four canonical pericyte markers shown in the figure (ANPEP, CALD1, CSPG4, PDGFRB) are included.",
+    "Expression values reflect normalized gene expression reported in the figure, not raw data from sequencing."
+  ]
+}

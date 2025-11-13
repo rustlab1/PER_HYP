@@ -1,24 +1,13 @@
-library(tibble)
 library(ggplot2)
 
-
-data <- tribble(
-  ~SYMBOLS, ~Category, ~Group, ~Expression_mean, ~Expression_sd,
-  "ANPEP",  "Pericyte Markers", "Norm", 1.00, 0.204,
-  "ANPEP",  "Pericyte Markers", "Hyp",  1.28, 0.457,
-  "CALD1",  "Pericyte Markers", "Norm", 1.00, 0.0513,
-  "CALD1",  "Pericyte Markers", "Hyp",  0.772, 0.124,
-  "CSPG4",  "Pericyte Markers", "Norm", 1.00, 0.0946,
-  "CSPG4",  "Pericyte Markers", "Hyp",  2.32, 0.882,
-  "PDGFRB", "Pericyte Markers", "Norm", 1.00, 0.0987,
-  "PDGFRB", "Pericyte Markers", "Hyp",  1.62, 0.502
-)
+# Read the extracted solution CSV (must be in same folder)
+data <- read.csv("extracted_solution.csv")
 
 # Convert Group to factor with desired order
 data$Group <- factor(data$Group, levels = c("Norm", "Hyp"))
 
 # Plot
-aaa <- ggplot(data, aes(x = Group, y = Expression_mean, fill = Group)) +
+p <- ggplot(data, aes(x = Group, y = Expression_mean, fill = Group)) +
   geom_errorbar(aes(ymin = Expression_mean - Expression_sd,
                     ymax = Expression_mean + Expression_sd),
                 width = 0.2, position = position_dodge(0.8), color = "black") +
@@ -37,10 +26,6 @@ aaa <- ggplot(data, aes(x = Group, y = Expression_mean, fill = Group)) +
     axis.text.x = element_blank(),
     axis.ticks.x = element_blank()
   )
-
-aaa
-
-
-ggsave("output_figure.png", width = 4, height = 3)
-write.csv(data, "output_data.csv", row.names = FALSE)
-
+p
+# Save output
+ggsave("extracted_solution.jpg", plot = p, width = 4, height = 3)
